@@ -1,0 +1,59 @@
+<form class="contact-form">
+  <input type="hidden" name="_subject" value="Hola Vaerom!">
+
+  <div class="alert alert-info" role="alert">
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Enviando mensaje...
+  </div>
+
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Mensaje enviado, en breve estaremos en contacto!
+  </div>
+
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Ocurri&oacute; un error, por favor revisa el formulario.
+  </div>
+
+  <fieldset class="form-group row required" style="display: none">
+    <label for="name" class="form-control-label col-md-3 col-lg-2">Required</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="gotcha" name="_gotcha" type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="name" class="form-control-label col-md-3 col-lg-2">Nombre</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="name" name="name" type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="_replyto" class="form-control-label col-md-3 col-lg-2">Email</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="email" name="_replyto" type="email" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="comment" class="form-control-label col-md-3 col-lg-2">Comentario</label>
+    <div class="col-md-9 col-lg-6">
+      <textarea id="comment" name="comment" class="form-control" rows="6"
+        placeholder="Hola Vaerom..."></textarea>
+    </div>
+  </fieldset>
+
+  <div class="row">
+    <div class="offset-md-8 offset-lg-6 col-md-4 col-lg-2">
+      <button type="submit" class="btn btn-ghost btn-block btn-lg">Enviar</button>
+    </div>
+  </div>
+</form>

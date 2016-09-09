@@ -1,0 +1,138 @@
+/*
+ *
+ * Layout
+ *
+ */
+
+body {
+  color: #888;
+}
+
+@media (min-width: 34em) {     /* Small devices */
+  body { padding-top: 60px; }  /* Fixed navbar */
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+.anchor {
+  display: block;
+  margin-top: -100px;
+  padding-top: 100px;
+}
+
+.anchor-tight {
+  display: block;
+  margin-top: -60px;
+  padding-top: 60px;
+}
+
+
+/* Navbar
+ * ====== */
+
+/* Fix navbar avobe small */
+@media (min-width: 34em) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+}
+
+.navbar-brand {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.navbar-brand-box {
+  display: block;
+  overflow: hidden;
+  height: 32px;
+}
+
+.navbar-brand-box * {
+  float: left;
+}
+
+.navbar-brand img {
+  display: inline;
+  opacity: 0.8;
+}
+
+.navbar-brand:hover img {
+  opacity: 1;
+}
+
+.navbar-brand-text {
+  color: rgba(255,255,255,.75);
+}
+
+.navbar-brand:hover .navbar-brand-text {
+  color: rgba(255,255,255,1);
+}
+
+@media (max-width: 33.9em) {
+  .navbar .navbar-nav .nav-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/* Footer
+ * ====== */
+
+.main-footer {
+  padding: 3rem 0;
+  background-color: #373a3c;
+  color: #fff;
+}
+
+.main-footer ul {
+  margin-bottom: 2rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main-footer li {
+  margin-bottom: 0.5rem;
+}
+
+.main-footer ul .fa {
+  margin-right: 0.5rem;
+}
+
+.main-footer a {
+  color: #fff;
+}
+
+@media (min-width: 34em) { /* Small */
+  .main-footer h4 {
+    margin-bottom: 1.2rem;
+  }
+
+  .main-footer ul {
+    margin-bottom: 2rem;
+  }
+
+  .main-footer li {
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* Forms
+ * ===== */
+
+form .required label:after {
+  content: "\2055";
+  display: inline-block;
+  margin-left: 3px;
+}

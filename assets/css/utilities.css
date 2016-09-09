@@ -1,0 +1,38 @@
+/*
+ *
+ * Utilities
+ *
+ */
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #fff;
+  box-shadow: none;
+  color: #fff;
+  padding: 8px 20px;
+}
+
+.btn-ghost:hover, .btn-ghost:focus, .btn-ghost:active {
+  background: #fff;
+  color: #555;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+
+/* Fixes
+ * ===== */
+
+p.form-control-feedback {
+  margin-bottom: 0;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,.5);
+}
+
+.navbar-dark .navbar-toggler:hover {
+  color: rgba(255,255,255,.75);
+}

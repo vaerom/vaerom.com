@@ -1,0 +1,129 @@
+<form class="postulation-form">
+  <input type="hidden" name="_subject" value="Postulaci&oacute;n a curso de vuelo de VANTs">
+
+  <div class="row postulation-form-alerts">
+    <div class="col-sm-12">
+      <div class="alert alert-info" role="alert">
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="fa fa-hourglass-half"></i>
+        Enviando mensaje...
+      </div>
+
+      <div class="alert alert-success" role="alert">
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4>
+          <i class="fa fa-check-circle-o"></i>
+          Postulaci&oacute;n enviada!
+        </h4>
+        Cada postulaci&oacute;n es asistida personalmente, pr&oacute;ximamente nos
+        pondremos en contacto para finalizar el proceso de inscripci&oacute;n.
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="fa fa-warning"></i>
+        Ocurri&oacute; un error, por favor revisa el formulario.
+      </div>
+    </div>
+  </div>
+
+  <fieldset class="form-group row required" style="display: none">
+    <label for="name" class="form-control-label col-md-3 col-lg-2">Required</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="gotcha" name="_gotcha" type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="firstname" class="form-control-label col-md-3 col-lg-2">Nombre</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="firstname" name="firstname" type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="lastname" class="form-control-label col-md-3 col-lg-2">Apellido</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="lastname" name="lastname" type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group form-check row required">
+    <div class="offset-md-3 offset-lg-2 col-md-9 col-lg-6">
+      <label class="form-check-label">
+        <input name="adult" type="checkbox" value="1" class="form-check-input" >
+        Soy mayor de edad
+      </label>
+      <small class="form-text">
+        Menores de edad pueden realizar el curso si son mayores de 16 a&ntilde;os y
+        asisten acompa&ntilde;ados de un adulto resposable.
+        <span class="nobr">
+          Ver <a href="#course_requirements" data-scroll="true">requisitos</a>.
+        </span>
+      </small>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group form-check row required">
+    <div class="offset-md-3 offset-lg-2 col-md-9 col-lg-6">
+      <label class="form-check-label">
+        <input name="vant_owner" type="checkbox" value="1" class="form-check-input" >
+        Poseo un multic&oacute;ptero o tengo acceso a uno
+      </label>
+      <small class="form-text">
+        No se requiere poseer un multic&oacute;ptero para realizar el curso!
+        <span class="nobr">
+          Ver <a href="#course_requirements" data-scroll="true">requisitos</a>.
+        </span>
+      </small>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="ocupation" class="form-control-label col-md-3 col-lg-2">
+      <span class="hidden-md-down">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      Actividad u ocupaci&oacute;n
+    </label>
+    <div class="col-md-9 col-lg-6">
+      <input id="ocupation" name="ocupation" type="phone" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="_replyto" class="form-control-label col-md-3 col-lg-2">Email</label>
+    <div class="col-md-9 col-lg-6">
+      <input id="email" name="_replyto" type="email" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row required">
+    <label for="phone" class="form-control-label col-md-3 col-lg-2">
+      <span class="hidden-md-down">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      Tel&eacute;fono de contacto
+    </label>
+    <div class="col-md-9 col-lg-6">
+      <input id="phone" name="phone" type="phone" class="form-control">
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group row">
+    <label for="comment" class="form-control-label col-md-3 col-lg-2">
+      Observaciones
+    </label>
+    <div class="col-md-9 col-lg-6">
+      <textarea id="comment" name="comment" class="form-control" rows="3"></textarea>
+    </div>
+  </fieldset>
+
+  <div class="row">
+    <div class="offset-md-8 offset-lg-6 col-md-4 col-lg-2">
+      <button type="submit" class="btn btn-ghost btn-block btn-lg">Enviar</button>
+    </div>
+  </div>
+</form>

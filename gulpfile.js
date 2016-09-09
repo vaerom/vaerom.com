@@ -1,26 +1,32 @@
-var del      = require('del')
-var gulp     = require('gulp')
-var newer    = require('gulp-newer')
-var concat   = require('gulp-concat')
-var uglify   = require('gulp-uglify')
-var imagemin = require('gulp-imagemin')
-var cleanCSS = require('gulp-clean-css')
+var del          = require('del')
+var gulp         = require('gulp')
+var newer        = require('gulp-newer')
+var uglify       = require('gulp-uglify')
+var plumber      = require('gulp-plumber')
+var htmlmin      = require('gulp-htmlmin')
+var imagemin     = require('gulp-imagemin')
+var cleanCSS     = require('gulp-clean-css')
+var fileInclude  = require('gulp-file-include')
+var autoprefixer = require('gulp-autoprefixer')
 
 var paths = {
-  js:   { src: 'assets/js/**/*',  dest: 'build/js' },
-  css:  { src: 'assets/css/**/*', dest: 'build/css' },
-  img:  { src: 'assets/img/**/*', dest: 'build/img' },
-  stat: { src: ['views/**/*', 'public/**/*'], dest: 'build' }
+  js:   { watch: 'assets/js/**/*',  src: 'assets/js/app.js',   dest: 'dist/js' },
+  css:  { watch: 'assets/css/**/*', src: 'assets/css/app.css', dest: 'dist/css' },
+  img:  { watch: 'assets/img/**/*', src: 'assets/img/**/*',    dest: 'dist/img' },
+  stat: { watch: 'public/**/*',     src: 'public/**/*',        dest: 'dist' },
+  html: { watch: 'views/**/*',      src: 'views/**/[^_]*',     dest: 'dist' }
 }
 
 gulp.task('static', function() {
   return gulp.src(paths.stat.src)
+    .pipe(plumber())
     .pipe(newer(paths.stat.dest))
     .pipe(gulp.dest(paths.stat.dest))
 })
 
 gulp.task('images', function() {
   return gulp.src(paths.img.src)
+    .pipe(plumber())
     .pipe(newer(paths.img.dest))
     .pipe(imagemin())
     .pipe(gulp.dest(paths.img.dest))
@@ -28,27 +34,42 @@ gulp.task('images', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.js.src)
-    .pipe(newer(paths.js.dest + '/app.js'))
+    .pipe(plumber())
+    .pipe(fileInclude())
     .pipe(uglify())
-    .pipe(concat('app.js'))
     .pipe(gulp.dest(paths.js.dest))
 })
 
 gulp.task('stylesheets', function() {
   return gulp.src(paths.css.src)
-    .pipe(newer(paths.css.dest + '/app.css'))
+    .pipe(plumber())
+    .pipe(fileInclude())
+    .pipe(autoprefixer('last 2 version', '> 1%', 'ie 8', 'ie 9'))
     .pipe(cleanCSS())
-    .pipe(concat('app.css'))
     .pipe(gulp.dest(paths.css.dest))
 })
 
-gulp.task('watch', function() {
-  gulp.watch(paths.stat.src, ['static'])
-  gulp.watch(paths.img.src,  ['images'])
-  gulp.watch(paths.js.src,   ['scripts'])
-  gulp.watch(paths.css.src,  ['stylesheets'])
+gulp.task('html', function() {
+  return gulp.src(paths.html.src)
+    .pipe(plumber())
+    .pipe(fileInclude())
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      collapseBooleanAttributes: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(paths.html.dest))
 })
 
-gulp.task('clean', function() { return del(['build']) })
-gulp.task('build', ['static', 'images', 'scripts', 'stylesheets'])
-gulp.task('default', ['watch', 'build'])
+gulp.task('watch', function() {
+  gulp.watch(paths.stat.watch, ['static'])
+  gulp.watch(paths.img.watch,  ['images'])
+  gulp.watch(paths.js.watch,   ['scripts'])
+  gulp.watch(paths.css.watch,  ['stylesheets'])
+  gulp.watch(paths.html.watch, ['html'])
+})
+
+gulp.task('clean', function() { return del(['dist']) })
+gulp.task('build', ['static', 'images', 'scripts', 'stylesheets', 'html'])
+gulp.task('default', ['build', 'watch'])
