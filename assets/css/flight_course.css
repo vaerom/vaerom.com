@@ -7,6 +7,10 @@
 /* Hero
  * ==== */
 
+.highlight {
+  color: #0099ff;
+}
+
 .course-hero {
   height: 260px;
   margin-bottom: 2rem;
