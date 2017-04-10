@@ -92,7 +92,7 @@
   max-height: 210px;
 }
 
-.course-detail {
+.course-detail, .course-detail-inline {
   margin-bottom: 2rem;
 }
 
@@ -100,17 +100,9 @@
   font-weight: bold;
 }
 
-.course-detail-inline {
-  margin-bottom: 1rem;
-}
-
 .course-detail-inline h6 {
   display: inline;
   font-weight: bold;
-}
-
-.course-schedule {
-  margin-top: 1rem;
 }
 
 .course-schedule th {
