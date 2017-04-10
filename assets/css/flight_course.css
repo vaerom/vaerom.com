@@ -105,6 +105,12 @@
   font-weight: bold;
 }
 
+.course-schedule {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .course-schedule th {
   padding: 0.1rem 3rem 0.1rem 1rem;
   background-color: #09f;
