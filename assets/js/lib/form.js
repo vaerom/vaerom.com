@@ -2,7 +2,7 @@
   var proto = Form.prototype
 
   function Form (form, resourceClass) {
-    var self = this
+    var self  = this
     self.form = form
     submitBtn = $('.btn', form),
 
